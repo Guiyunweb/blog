@@ -1,0 +1,42 @@
+# HTTP Server
+[server]
+    Address     = ":10050"
+    ServerRoot  = "public"
+    ServerAgent = "blog"
+    LogPath     = "/home/blog/log/server"
+
+# 网站设置
+[setting]
+    title       = "个人网站"
+    keywords    = "归云的博客,孟源运,归云,vue,java,linux,Go,Golang,个人网站,博客,blog,webstie"
+    description = "归云的个人小站,主要作用于平时归纳总结来使用"
+
+# Logger.
+[logger]
+    Path        = "/home/blog/log"
+    Level       = "all"
+    Stdout      = true
+
+# Template.
+[viewer]
+    Path        = "template"
+    DefaultFile = "index.tpl"
+    Delimiters  =  ["{{", "}}"]
+    Layout = "module/layout.tpl" #博客模板
+
+# Database.
+[database]
+    link   = "mysql:root:12345678@tcp(127.0.0.1:3306)/db_blog"
+    debug = true
+    # Database logger.
+    [database.logger]
+        Path   = "/home/blog/log/db"
+        Level  = "all"
+        Stdout = true
+
+# 工具相关配置
+[gfcli]
+    [[gfcli.gen.dao]]
+        link   = "mysql:root:12345678@tcp(127.0.0.1:3306)/db_blog"
+        path         = "./app"
+        tables       = "users,tags,posts,post_tags,options,menus,links,attachments"
