@@ -9,15 +9,15 @@ import (
 
 func GetPostPage(data *define.ContentPageReq) model.View {
 
-	total, _ := dao.Posts.Count(g.Map{
+	total, _ := dao.Posts.Cache(0).Count(g.Map{
 		"type": 0,
 	})
 
-	list, _ := dao.Posts.Page(data.Page, 10).FindAll(g.Map{
+	list, _ := dao.Posts.Cache(0).Page(data.Page, 10).FindAll(g.Map{
 		"type": 0,
 	})
 
-	menus := getMenus()
+	menus, _ := getMenus()
 
 	return model.View{
 		Page: model.Page{

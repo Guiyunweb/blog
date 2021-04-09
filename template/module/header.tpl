@@ -5,3 +5,7 @@
 <title>{{.Title}}</title>
 <meta name="keywords" content="{{.Keywords}}"/>
 <meta name="description" content="{{.Description}}"/>
+
+
+<script src="/resource/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

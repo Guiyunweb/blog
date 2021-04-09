@@ -3,12 +3,10 @@ package index
 import (
 	"blog/app/system/index/internal/api"
 	"blog/app/system/index/internal/service"
-	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )
 
-func Init() {
-	s := g.Server()
+func Init(s *ghttp.Server) {
 
 	// 前台系统自定义错误页面
 	s.BindStatusHandler(401, func(r *ghttp.Request) {
