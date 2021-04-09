@@ -5,7 +5,6 @@ import (
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/util/gconv"
-	"github.com/gogf/gf/util/gmode"
 )
 
 // View 视图管理服务
@@ -41,9 +40,9 @@ func (s *viewService) Render(r *ghttp.Request, data ...model.View) {
 
 	r.Response.WriteTpl(g.Cfg().GetString("viewer.Layout"), viewData)
 	// 开发模式下，在页面最下面打印所有的模板变量
-	if gmode.IsDevelop() {
-		r.Response.WriteTplContent(`{{dump .}}`, viewData)
-	}
+	//if gmode.IsDevelop() {
+	//	r.Response.WriteTplContent(`{{dump .}}`, viewData)
+	//}
 	// 退出当前业务函数执行
 	r.Exit()
 }
