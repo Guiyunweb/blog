@@ -47,6 +47,7 @@ func (s *viewService) Render(r *ghttp.Request, data ...model.View) {
 	// 退出当前业务函数执行
 	r.Exit()
 }
+
 func (s *viewService) Render401(r *ghttp.Request) {
 	view := model.View{}
 	if view.Title == "" {

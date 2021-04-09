@@ -6,5 +6,6 @@ type ContentDetailReq struct {
 }
 
 type ContentPageReq struct {
-	Page int `v:"min:1#请选择选择分页"`
+	Id   uint `v:"min:1#请选择查看的内容"`
+	Page int  `v:"min:1#请选择查看的内容"`
 }
