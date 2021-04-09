@@ -23,6 +23,6 @@ func Index(r *ghttp.Request) {
 			Data:    list,
 		})
 	} else {
-		r.Response.Writeln("499")
+		service.View.Render500(r)
 	}
 }
