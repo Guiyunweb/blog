@@ -24,8 +24,9 @@ func GetPostPage(data *define.ContentPageReq) model.View {
 			Page:  data.Page,
 			Total: total,
 		},
-		Menu: menus,
-		Data: list,
+		MainTpl: "index.tpl",
+		Menu:    menus,
+		Data:    list,
 	}
 
 }
